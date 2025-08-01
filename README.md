@@ -20,10 +20,18 @@ This project contains a Python script that automatically capitalizes any text co
 
 ## How to Run the Script
 
-To run the script, execute the following command in your terminal:
+To run the script, you have two options:
 
-```bash
-python capitalizer.py
-```
+1.  **Using the Python command (manual)**:
 
-The script will run in the background, monitoring your clipboard. To stop it, press `Ctrl+C` in the terminal where it's running.
+    Execute the following command in your terminal:
+
+    ```bash
+    python capitalizer.py
+    ```
+
+    The script will run in the background, monitoring your clipboard. To stop it, press `Ctrl+C` in the terminal where it's running.
+
+2.  **Using the batch file (automated)**:
+
+    Simply double-click the `run_capitalizer.bat` file. This will automatically install dependencies (if not already installed) and run the Python script. A command prompt window will open and remain open while the script is running. To stop the script, close this command prompt window.
