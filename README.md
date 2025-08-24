@@ -1,6 +1,6 @@
 # Capitalizer Automation
 
-This project contains a Python script that automatically capitalizes any text copied to the clipboard.
+This project contains a Python script that automatically capitalizes any text copied to the clipboard and removes line breaks. The script will process text if it's not already all caps or if it contains line breaks.
 
 ## Setup and Installation
 
