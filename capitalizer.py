@@ -1,6 +1,6 @@
 import pyperclip
 import time
-from pynput import keyboard
+import keyboard
 
 class ClipboardCapitalizer:
     def __init__(self):
@@ -27,24 +27,12 @@ class ClipboardCapitalizer:
         except Exception as e:
             print(f"Error processing clipboard: {e}")
 
-    def on_press(self, key):
-        if key == keyboard.Key.home:
-            self.toggle()
-            # Don't return False so listener continues running for future presses
-
-    def start_key_listener(self):
-        while True:
-            with keyboard.Listener(on_press=self.on_press) as listener:
-                listener.join()
-            time.sleep(0.1)
-
     def start(self):
         print("Clipboard capitalizer started. Press HOME to toggle processing.")
         print("Press CTRL+C to exit.")
         
-        # Start the keyboard listener in a separate thread
-        listener_thread = keyboard.Listener(on_press=self.on_press)
-        listener_thread.start()
+        # Register global hotkey for Home key
+        keyboard.add_hotkey('home', self.toggle)
 
         try:
             while True:
@@ -53,8 +41,7 @@ class ClipboardCapitalizer:
         except KeyboardInterrupt:
             print("\nScript stopped.")
         finally:
-            listener_thread.stop()
-            listener_thread.join()
+            keyboard.unhook_all()
 
 if __name__ == "__main__":
     capitalizer = ClipboardCapitalizer()
