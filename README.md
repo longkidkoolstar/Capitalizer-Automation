@@ -32,6 +32,8 @@ To run the script, you have two options:
 
     The script will run in the background, monitoring your clipboard. To stop it, press `Ctrl+C` in the terminal where it's running.
 
+**Toggle Functionality:** You can enable or disable the clipboard processing at any time by pressing the `Home` key.
+
 2.  **Using the batch file (automated)**:
 
     Simply double-click the `run_capitalizer.bat` file. This will automatically install dependencies (if not already installed) and run the Python script. A command prompt window will open and remain open while the script is running. To stop the script, close this command prompt window.
